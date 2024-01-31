@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import * as React from "react"
+import { Textarea } from "@/components/ui/textarea"
+import { Switch } from "@/components/ui/switch"
 
 import {
   Card,
@@ -36,21 +38,21 @@ export function TabsDemo() {
           <CardHeader>
             <CardTitle>Send Text</CardTitle>
             <CardDescription>
-              Make changes to your account here. Click save when you're done.
+              Send Text With Password
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" defaultValue="Pedro Duarte" />
+              <Label htmlFor="send-text">Your Text</Label>
+              <Textarea id='send-text'/>
             </div>
             <div className="space-y-1">
-              <Label htmlFor="username">Username</Label>
-              <Input id="username" defaultValue="@peduarte" />
+            <Switch id="encryption" />
+            <Label htmlFor="encryption">Encryption</Label>
             </div>
           </CardContent>
           <CardFooter>
-            <Button>Save changes</Button>
+            <Button>Send</Button>
           </CardFooter>
         </Card>
       </TabsContent>
