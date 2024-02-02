@@ -1,9 +1,9 @@
-import Image from "next/image";
+"use client"
+
 import { Button } from "@/components/ui/button"
 import * as React from "react"
 import { Textarea } from "@/components/ui/textarea"
-import { Switch } from "@/components/ui/switch"
-
+import  TextForm  from '@/components/send/text'
 import {
   Card,
   CardContent,
@@ -14,46 +14,29 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export function TabsDemo() {
   return (
-    <Tabs defaultValue="text" className="sm:w-96 sm:px-0 w-full px-2">
+    <Tabs defaultValue="text" className="sm:w-[500px] sm:px-0 w-full px-2">
       <TabsList className="grid w-full grid-cols-3">
         <TabsTrigger value="text">Text</TabsTrigger>
         <TabsTrigger value="image">Image</TabsTrigger>
-        <TabsTrigger value="file">file</TabsTrigger>
-
+        <TabsTrigger value="file">File</TabsTrigger>
       </TabsList>
+
       <TabsContent value="text">
         <Card>
           <CardHeader>
             <CardTitle>Send Text</CardTitle>
-            <CardDescription>
-              Send Text With Password
-            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="send-text">Your Text</Label>
-              <Textarea id='send-text'/>
-            </div>
-            <div className="space-y-1">
-            <Switch id="encryption" />
-            <Label htmlFor="encryption">Encryption</Label>
-            </div>
+            <TextForm></TextForm>
           </CardContent>
-          <CardFooter>
+          {/* <CardFooter>
             <Button>Send</Button>
-          </CardFooter>
+          </CardFooter> */}
         </Card>
       </TabsContent>
       <TabsContent value="image">
@@ -84,7 +67,7 @@ export function TabsDemo() {
 }
 export default function Home() {
   return (
-    <div className="flex pt-20 justify-center content-center">
+    <div className="flex pt-10 justify-center content-center">
         <TabsDemo></TabsDemo>
     </div>
   );
