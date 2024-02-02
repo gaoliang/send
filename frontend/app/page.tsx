@@ -26,7 +26,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export function TabsDemo() {
   return (
-    <Tabs defaultValue="text" className="w-[400px]">
+    <Tabs defaultValue="text" className="sm:w-96 sm:px-0 w-full px-2">
       <TabsList className="grid w-full grid-cols-3">
         <TabsTrigger value="text">Text</TabsTrigger>
         <TabsTrigger value="image">Image</TabsTrigger>
@@ -84,8 +84,8 @@ export function TabsDemo() {
 }
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <TabsDemo></TabsDemo>
-    </main>
+    <div className="flex pt-20 justify-center content-center">
+        <TabsDemo></TabsDemo>
+    </div>
   );
 }
